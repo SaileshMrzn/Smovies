@@ -1,7 +1,21 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import {
+  fetchAsyncMovies,
+  fetchAsyncShows,
+} from "../features/slice/movieSlice";
 
 function Header() {
   const [searchValue, setSearchValue] = useState("");
+  const dispatch = useDispatch();
+  const handleSearch = (e) => {
+    console.log("search clicked");
+    e.preventDefault();
+    dispatch(fetchAsyncMovies(searchValue));
+    dispatch(fetchAsyncShows(searchValue));
+    setSearchValue("");
+  };
   return (
     <>
       <div className="navbar bg-base-100">
@@ -44,14 +58,17 @@ function Header() {
           </div>
         </div>
         <div className="navbar-center">
-          <a className="btn btn-ghost text-xl">Smovies</a>
+          <Link to={"/"}>
+            <a className="btn btn-ghost text-xl">Smovies</a>
+          </Link>
         </div>
         <div className="navbar-end">
           <input
             type="text"
             id="searchBar"
             value={searchValue}
-            className={`bg-white w-[14rem] h-[1.5rem] p-2 text-black text-sm rounded-sm`}
+            className={`bg-white w-[14rem] h-[2rem] p-2 text-black text-sm rounded-sm`}
+            onChange={(e) => setSearchValue(e.target.value)}
           />
           <button className="btn btn-ghost btn-circle">
             <svg
@@ -61,6 +78,7 @@ function Header() {
               viewBox="0 0 24 24"
               stroke="currentColor"
               id="search"
+              onClick={handleSearch}
             >
               <path
                 strokeLinecap="round"

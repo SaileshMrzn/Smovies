@@ -32,7 +32,7 @@ function MovieListing() {
   let renderShows = "";
   renderShows =
     shows.Response === "True" ? (
-      shows.Search.map((show, index) => <MovieCard key={index} data={show} />)
+      shows.Search.map((movie, index) => <MovieCard key={index} data={movie} />)
     ) : (
       <div>
         <h3>{shows.Error}</h3>
@@ -49,7 +49,7 @@ function MovieListing() {
       </div>
       <h2 className="mx-[3rem] mb-1 text-lg">Series</h2>
       <div className="flex justify-center">
-        <div className="h-fit w-[96%] mb-12">
+        <div className="h-fit w-[96%] mb-12 justify-around">
           <Slider {...settings}>{renderShows}</Slider>
         </div>
       </div>

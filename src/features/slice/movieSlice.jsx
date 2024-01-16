@@ -4,10 +4,9 @@ import axios from "axios";
 
 export const fetchAsyncMovies = createAsyncThunk(
   "movies/fetchAsyncMovies",
-  async () => {
-    const searchTerm = "batman";
+  async (term) => {
     const res = await axios.get(
-      `https://www.omdbapi.com/?apikey=${apikey}&s=${searchTerm}&type=movie`
+      `https://www.omdbapi.com/?apikey=${apikey}&s=${term}&type=movie`
     );
     return res.data;
   }
@@ -15,10 +14,9 @@ export const fetchAsyncMovies = createAsyncThunk(
 
 export const fetchAsyncShows = createAsyncThunk(
   "movies/fetchAsyncShows",
-  async () => {
-    const searchTerm = "friends";
+  async (term) => {
     const res = await axios.get(
-      `https://www.omdbapi.com/?apikey=${apikey}&s=${searchTerm}&type=series`
+      `https://www.omdbapi.com/?apikey=${apikey}&s=${term}&type=series`
     );
     return res.data;
   }

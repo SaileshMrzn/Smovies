@@ -9,13 +9,15 @@ import {
 
 function Home() {
   const dispatch = useDispatch();
+  const default_movie = "Batman";
+  const default_show = "Friends";
   useEffect(() => {
-    dispatch(fetchAsyncMovies());
-    dispatch(fetchAsyncShows());
+    dispatch(fetchAsyncMovies(default_movie));
+    dispatch(fetchAsyncShows(default_show));
   }, []);
 
   return (
-    <div className="mx-[1.5rem] h-fit overflow-x-hidden">
+    <div className="mx-[1.5rem] overflow-x-hidden">
       <MovieListing />
     </div>
   );

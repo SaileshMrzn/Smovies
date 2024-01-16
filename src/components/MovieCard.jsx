@@ -11,7 +11,11 @@ function MovieCard(props) {
             <img
               className="h-[100%] w-[100%]"
               // src="https://static.bunnycdn.ru/i/cache/images/0/04/04f7d5c5954f7c9c2e1313e0b34e4306.jpg"
-              src={data.Poster}
+              src={
+                data.Poster === "N/A"
+                  ? "https://static.bunnycdn.ru/i/cache/images/0/04/04f7d5c5954f7c9c2e1313e0b34e4306.jpg"
+                  : data.Poster
+              }
               alt=""
               srcset=""
             />
