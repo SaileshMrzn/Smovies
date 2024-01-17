@@ -12,7 +12,7 @@ function MovieCard(props) {
               className="h-[100%] w-[100%]"
               src={
                 data.Poster === "N/A"
-                  ? "https://static.bunnycdn.ru/i/cache/images/0/04/04f7d5c5954f7c9c2e1313e0b34e4306.jpg"
+                  ? "https://australianoftheyear.org.au/sites/default/files/2021-09/Screen%20Shot%202021-09-13%20at%201.09.50%20pm.png"
                   : data.Poster
               }
               alt=""

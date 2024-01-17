@@ -36,6 +36,7 @@ const initialState = {
   movies: {},
   shows: {},
   movieDetail: {},
+  loader: true,
 };
 
 export const movieSlice = createSlice({
@@ -47,19 +48,26 @@ export const movieSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchAsyncMovies.pending, () => {
+    builder.addCase(fetchAsyncMovies.pending, (state) => {
       console.log("pending");
+      state.loader = true;
+    });
+
+    builder.addCase(fetchAsyncShows.pending, (state) => {
+      console.log("shows pending");
+      state.loader = true;
     });
 
     builder.addCase(fetchAsyncMovies.fulfilled, (state, { payload }) => {
       console.log("Fetched");
-      return { ...state, movies: payload };
+      return { ...state, movies: payload, loader: false };
       // state.entities.push(action.payload);
     });
 
     builder.addCase(fetchAsyncShows.fulfilled, (state, { payload }) => {
       console.log("Fetched");
-      return { ...state, shows: payload };
+      state.loader = false;
+      return { ...state, shows: payload, loader: false };
       // state.entities.push(action.payload);
     });
 
@@ -80,3 +88,4 @@ export default movieSlice.reducer;
 export const getAllMovies = (state) => state.movies.movies;
 export const getAllShows = (state) => state.movies.shows;
 export const getSelectedMovie = (state) => state.movies.movieDetail;
+export const getLoaderState = (state) => state.movies.loader;
