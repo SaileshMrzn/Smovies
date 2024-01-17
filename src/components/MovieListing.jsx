@@ -5,15 +5,9 @@ import MovieCard from "../components/MovieCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { settings } from "../common/settings";
 
 function MovieListing() {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 7,
-    slidesToScroll: 1,
-  };
   const movies = useSelector(getAllMovies);
   const shows = useSelector(getAllShows);
 
