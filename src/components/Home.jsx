@@ -17,7 +17,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="mx-[1.5rem] overflow-x-hidden">
+    <div className="mx-[1.5rem] overflow-hidden">
       <MovieListing />
     </div>
   );
