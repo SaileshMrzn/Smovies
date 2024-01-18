@@ -17,11 +17,11 @@ function MovieDetail() {
     return () => {
       dispatch(removeMovieDetail());
     };
-  }, [imdbID, dispatch]);
+  }, [imdbID]);
   return (
-    <div className="mx-[4rem] flex gap-3 mb-5">
+    <div className="mx-[4rem] flex gap-3 mb-5 mt-5">
       {Object.keys(data).length === 0 ? (
-        <div className="flex items-center w-screen h-[7rem] justify-center text-lg">
+        <div className="flex items-center w-screen h-[7rem] justify-center text-base">
           Loading...
         </div>
       ) : (

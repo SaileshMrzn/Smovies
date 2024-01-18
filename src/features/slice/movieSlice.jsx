@@ -66,7 +66,6 @@ export const movieSlice = createSlice({
 
     builder.addCase(fetchAsyncShows.fulfilled, (state, { payload }) => {
       console.log("Fetched");
-      state.loader = false;
       return { ...state, shows: payload, loader: false };
       // state.entities.push(action.payload);
     });
