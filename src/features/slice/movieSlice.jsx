@@ -1,7 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import apikey from "../../common/api/apikey";
+// import apikey from "../../common/api/apikey";
 import axios from "axios";
 
+var apikey = import.meta.env.VITE_API_KEY;
+console.log(apikey);
 export const fetchAsyncMovies = createAsyncThunk(
   "movies/fetchAsyncMovies",
   async (term) => {
