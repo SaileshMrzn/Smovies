@@ -40,7 +40,7 @@ function MovieListing() {
 
   return (
     <>
-      <div className="mx-[3rem] mb-1 text-lg">Movies</div>
+      <div className="mx-[5rem] mb-1 text-lg">Movies</div>
       <div className="flex justify-center">
         <div className="h-fit w-[90%] mb-12">
           {loader === true ? (
@@ -52,7 +52,7 @@ function MovieListing() {
           )}
         </div>
       </div>
-      <div className="mx-[3rem] mb-1 text-lg">Series</div>
+      <div className="mx-[5rem] mb-1 text-lg">Series</div>
       <div className="flex justify-center">
         <div className="w-[90%] h-fit mb-12">
           {loader === true ? (
