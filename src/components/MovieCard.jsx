@@ -15,7 +15,7 @@ function MovieCard(props) {
                   ? "https://australianoftheyear.org.au/sites/default/files/2021-09/Screen%20Shot%202021-09-13%20at%201.09.50%20pm.png"
                   : data.Poster
               }
-              alt=""
+              alt="Failed to laod image"
               srcset=""
             />
           </div>

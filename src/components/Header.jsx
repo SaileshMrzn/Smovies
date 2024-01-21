@@ -19,6 +19,10 @@ function Header() {
       setSearchValue("");
     }
   };
+  const reload = () => {
+    window.location.reload();
+  };
+
   return (
     <>
       <div className="navbar bg-base-100">
@@ -44,25 +48,13 @@ function Header() {
                 />
               </svg>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a>Homepage</a>
-              </li>
-              <li>
-                <a>Portfolio</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-            </ul>
           </div>
         </div>
         <div className="navbar-center">
           <Link to={"/"}>
-            <a className="btn btn-ghost text-xl">Smovies</a>
+            <a className="btn btn-ghost text-xl" onClick={reload}>
+              Smovies
+            </a>
           </Link>
         </div>
         <div className="navbar-end">
